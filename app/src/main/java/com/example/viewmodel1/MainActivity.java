@@ -14,7 +14,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class MainActivity extends AppCompatActivity {
 
-    private CountDownTimer timer;
     private TextView timerText;
     MyViewModel viewModel;
     @Override
@@ -31,12 +30,9 @@ public class MainActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(MyViewModel.class);
 
         viewModel.getTextTimer().observe(this, newText -> {
-           timerText.setText(newText);
+            timerText.setText(newText);
         });
         viewModel.startTimer();
     }
 
-
-
-
-}
+    }
